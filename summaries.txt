@@ -1,0 +1,48 @@
+Positive Pysch - Can Money Buy Happiness?
+
+Good:
+
+Only leisure spending has any influence on psychological well being. In a study, participants wrote about either a material or experiential purchase and those who wrote about experiences felt happier afterwards. Material goods are easier to socially compare to others. Material purchases are more interchangeable than experiences, so they’re easier to substitute/replace. A study showed that people regretted not making singular purchases (more often experiences) than interchangeable ones (more often material).
+Money can buy you happiness if it brings a sense of social connectedness and provides a unique opportunity. A study showed that people on vacation recalled being happier than we were, and memories of events consisted of a few moments of happiness, rather than a continuous record.
+This all ties into the idea of hedonic adaptation, where we slowly get used to something over time and its impact diminishes. We’re more likely to adapt to material purchases, which can be recurring and interchangeable.
+
+Bad:
+
+Money can buy you happiness, as long as you spend it on the right things. There was a study conducted in a mall, with different types of purchases that showed that.
+
+
+
+
+1/17 Physical Layer
+
+Good:
+
+Data is represented as binary in the physical layer, and the DBMS maps bytes to the schema (and vice versa). There are two criteria for data storage at this level: size and speed. The DBMS’s data types have an effect on the storage. Strings types like varchar or char can affect how much storage is used because of their variable size (varchar lets you use any amount of characters, whereas char requires you to specify how many character to use). Having fixed length data types lets you quickly skip around when querying, but variable length strings can save space. To store variable length records, use a termination character like $ (e.g. hello$).
+A simple storage strategy is to use heap files. Insertion is fast (O(1)), but search and modifying/deleting take linear time. To optimize this, we can use heap pages. A file will contain multiple heap pages, where each page has its own header and records.
+
+
+
+
+Positive Psych - Mindfulness Meditation
+
+Good:
+
+A study of Buddhist monks showed no startle response (which is stronger for people with anxiety) and an extremely high prefrontal cortex activity ratio. A study was conducted and showed that participants who mediated showed decreased anxiety, improved mood, and a stronger immune system. Another study showed improved GRE scores as a result of meditation. Mindfulness meditation focuses on one thing (often breathing), and reduces unrelated thoughts.
+Studies on multitasking were conducted and showed that when participants’ attention switched to something different, they took longer to complete the trials, though there was no impact to accuracy or comprehension. These studies showed that attention is a limited resource and can only focus on one thing at a time, and switching between different tasks incurs a switch cost.
+
+Bad:
+
+Buddhist monks had good brains because they meditated. Multitasking slows you down.
+
+
+
+
+13.1 Anthro 31
+
+Good:
+
+Images of dark-skinned people in developing countries perpetuates notions of whiteness. Loftsdottir’s idea of a Developscape is how countries develop from both perspectives of giving and receiving aid. Donor countries often see themselves as generous and the saviors of the receiving countries. We watched several ads depicting how white saviors in Africa immediately perk up the previously solemn African children. Development is often associated with whiteness, while dark-skinned “third world” people are depicted helpless without their white saviors.
+
+Bad:
+
+White people like to stick their noses into other people’s business and praise themselves for it

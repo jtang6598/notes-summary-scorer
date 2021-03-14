@@ -1,0 +1,6 @@
+python-docx
+sklearn
+nltk
+pandas
+numpy
+requests_toolbelt

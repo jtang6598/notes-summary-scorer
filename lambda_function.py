@@ -1,5 +1,6 @@
 from reader import ReaderFactory
 from tfidf import TFIDF
+from requests_toolbelt.multipart import decoder
 
 
 messages = {
@@ -18,20 +19,41 @@ def lambda_handler(event, context):
             reader = reader_factory.get(file)
             notes.append(reader.read_text())
 
-    notes.append(event['notes'])
+    if event['notes']:
+        notes.append(event['notes'])
+
     notes = ' '.join(notes)
 
     tfidf = TFIDF()
     score = tfidf.find_similarity([notes, event['summary']])
+    level = None
 
     if score < 0.06:
-        score = 'bad'
+        level = 'bad'
     elif score < 0.14:
-        score = 'okay'
+        level = 'okay'
     else:
-        score = 'good'
+        level = 'good'
 
     return {
         'statusCode': 200,
-        'body': messages[score]
+        'body': {
+            'score': score,
+            'message': messages[level]
+        }
+    }
+
+def lambda_new(event, context):
+    content_type_header = event['headers']['content-type'] + '; boundary=' + event['body'].split('\r')[0].split('-')[-1]
+    # content_type_header = event['headers']['content-type'] + '; boundary=----WebKitFormBoundaryhkPBzaCCH5WTm3qe'
+
+    body = event['body'].encode()
+
+    response = ''
+    for part in decoder.MultipartDecoder(body, content_type_header).parts:
+        response += part.text + "\n"
+
+    return {
+        'statusCode': 200,
+        'body': response
     }
