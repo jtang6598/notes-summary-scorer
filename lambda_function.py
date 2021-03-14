@@ -16,18 +16,22 @@ def lambda_handler(event, context):
 
     if event['files']:
         for file in event['files']:
+            # read each individual file
             reader = reader_factory.get(file)
             notes.append(reader.read_text())
 
     if event['notes']:
+        # add any additional notes if included
         notes.append(event['notes'])
 
+    # consider all uploaded content to be part of the same set of notes
     notes = ' '.join(notes)
 
     tfidf = TFIDF()
     score = tfidf.find_similarity([notes, event['summary']])
     level = None
 
+    # get level from score, which will determine the message
     if score < 0.06:
         level = 'bad'
     elif score < 0.14:

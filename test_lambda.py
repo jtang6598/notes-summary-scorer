@@ -3,7 +3,7 @@ from lambda_function import lambda_handler
 
 if __name__ == '__main__':
     event = {
-        'files': ['Positive Pysch - Can Money Buy Happiness_.docx'],
+        'files': ['documents/Positive Pysch - Can Money Buy Happiness_.docx'],
         'notes': None,
         'summary': 'Money can buy you happiness, as long as you spend it on the right things. There was a study conducted in a mall, with different types of purchases that showed that.'
     }

@@ -7,7 +7,7 @@ class TXTReader(BaseReader):
         super().__init__(file)
 
     def read_text(self):
-        lines = None
-        with open(self.file, 'rb') as f:
-            lines = f.readlines()
-        return ' '.join(lines)
+        text = None
+        with open(self.file, 'r') as f:
+            text = f.read()
+        return text
