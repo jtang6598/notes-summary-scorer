@@ -1,4 +1,4 @@
-from reader.BaseReader import BaseReader
+from reader import BaseReader
 import PyPDF2
 
 
@@ -7,9 +7,10 @@ class PDFReader(BaseReader):
     def __init__(self, file):
         super().__init__(file)
 
-    def read_lines(self):
-        text = None
+    def read_text(self):
+        text = []
         with open(self.file, 'rb') as f:
-            if __name__ == '__main__':
-                pdfreader = PyPDF2.PdfFileReader(f)
-                text = pdfreader
+            pdfreader = PyPDF2.PdfFileReader(f)
+            for page in pdfreader.pages:
+                text.append(page.extractText())
+        return ' '.join(text)

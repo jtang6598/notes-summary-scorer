@@ -18,7 +18,9 @@ def lambda_handler(event, context):
             reader = reader_factory.get(file)
             notes.append(reader.read_text())
 
-    notes.append(event['notes'])
+    if event['notes']:
+        notes.append(event['notes'])
+
     notes = ' '.join(notes)
 
     tfidf = TFIDF()
