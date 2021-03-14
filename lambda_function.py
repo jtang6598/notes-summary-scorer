@@ -27,6 +27,7 @@ def lambda_handler(event, context):
     # consider all uploaded content to be part of the same set of notes
     notes = ' '.join(notes)
 
+    # Get on match using tf-idf
     tfidf = TFIDF()
     score = tfidf.find_similarity([notes, event['summary']])
     level = None
